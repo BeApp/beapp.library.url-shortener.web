@@ -1,0 +1,42 @@
+{
+    "name": "beapp/url-shortener",
+    "description": "Short url generator using Doctrine orm",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.0",
+    "keywords": [
+        "doctrine",
+        "url-shortener"
+    ],
+    "authors": [
+        {
+            "name": "Damien Villeneuve",
+            "email": "d.villeneuve@beapp.fr"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "doctrine/orm": "^2.6",
+        "beapp/doctrine-extensions": "^0.2.0",
+        "symfony/routing": "^4.2",
+        "symfony/framework-bundle": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beapp\\UrlShortener\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7.4.4"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Beapp\\UrlShortener\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
