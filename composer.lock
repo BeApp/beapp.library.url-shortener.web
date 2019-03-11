@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f4ae27203d7fe208dc3c3320ab8862c",
+    "content-hash": "88272d604addc7722ce9a8df97cb5284",
     "packages": [
         {
             "name": "beapp/doctrine-extensions",

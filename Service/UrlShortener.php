@@ -19,17 +19,22 @@ class UrlShortener
     /** @var RouterInterface */
     private $router;
 
+    /** @var string */
+    private $shortUrlRoute;
+
     /**
      * UrlShortener constructor.
      *
      * @param EntityManagerInterface $entityManager
      * @param RouterInterface        $router
+     * @param string                 $shortUrlRoute
      */
-    public function __construct(EntityManagerInterface $entityManager, RouterInterface $router)
+    public function __construct(EntityManagerInterface $entityManager, RouterInterface $router, string $shortUrlRoute)
     {
         $this->entityManager = $entityManager;
         $this->shortUrlRepository = $entityManager->getRepository(ShortUrlEntity::class);
         $this->router = $router;
+        $this->shortUrlRoute = $shortUrlRoute;
     }
 
     /**
@@ -65,7 +70,7 @@ class UrlShortener
      */
     public function getShortUrlFromUuid(string $shortUrl): string
     {
-        return $this->router->generate('app_shortened_url', ['shortUrl' => $shortUrl], UrlGenerator::ABSOLUTE_URL);
+        return $this->router->generate($this->shortUrlRoute, ['shortUrl' => $shortUrl], UrlGenerator::ABSOLUTE_URL);
     }
 
     /**

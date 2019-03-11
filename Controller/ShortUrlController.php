@@ -9,19 +9,20 @@ use Symfony\Component\Routing\Annotation\Route;
 class ShortUrlController extends AbstractController
 {
     /**
-     * @Route("/s/{shortUrl}", name="app_shortened_url", methods={"GET"})
+     * @Route("/%beapp-url-shortener.route_prefix%/{shortUrl}", name="beapp_shortened_url", methods={"GET"})
      *
      * @param string       $shortUrl
      * @param UrlShortener $urlShortener
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      */
     public function getUrlFromShortened(string $shortUrl, UrlShortener $urlShortener)
     {
         $shortUrlEntity = $urlShortener->findUrlFromShortened($shortUrl);
 
         if(null === $shortUrlEntity){
-            return $this->createNotFoundException();
+            throw $this->createNotFoundException();
         }
 
         return $this->redirect($shortUrlEntity->getFullUrl());

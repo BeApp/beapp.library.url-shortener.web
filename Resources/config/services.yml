@@ -1,0 +1,8 @@
+services:
+
+  beapp.url-shortener:
+    class: Beapp\UrlShortener\Service\UrlShortener
+    arguments:
+      - '@doctrine.orm.default_entity_manager'
+      - '@router.default'
+      - 'app_shortened_url'

@@ -19,7 +19,8 @@
         "doctrine/orm": "^2.6",
         "beapp/doctrine-extensions": "^0.2.0",
         "symfony/routing": "^4.2",
-        "symfony/framework-bundle": "^4.2"
+        "symfony/framework-bundle": "^4.2",
+        "symfony/config": "^4.2"
     },
     "autoload": {
         "psr-4": {
