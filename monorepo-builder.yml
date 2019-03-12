@@ -8,3 +8,4 @@ parameters:
     # for "split" command
     directories_to_repositories:
         packages/Core: 'git@github.com:BeApp/beapp.library.url-shortener-core.web.git'
+        packages/sample-project: 'git@github.com:BeApp/beapp.library.url-shortener-sample.web.git'
