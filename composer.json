@@ -24,11 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Beapp\\UrlShortener\\": "Core"
+            "Beapp\\UrlShortener\\": "packages/Core"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "7.4.4"
+        "phpunit/phpunit": "7.4.4",
+        "symplify/monorepo-builder": "^5.4"
     },
     "autoload-dev": {
         "psr-4": {
